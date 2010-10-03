@@ -1,0 +1,10 @@
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: primer
+  pool: 5
+  username: primer
+  password: primerpass
+  socket: /var/run/mysqld/mysqld.sock

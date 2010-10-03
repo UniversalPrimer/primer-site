@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Universal Primer: <%= title %></title>
+  <%= stylesheet_link_tag 'stream' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'ape-jsf/Build/uncompressed/apeClientJS.js' %>
+  <%= javascript_include_tag 'ape_config.js' %>
+  <%= javascript_include_tag 'ape.js' %>
+  <%= javascript_include_tag 'stream.js' %>
+  <script type='text/javascript'>
+
+    var chan = null;
+    var streamName = "<%= @stream.name %>";
+
+    function onApeReady() {
+      chan = ape.joinChannel(streamName, onReceive, onChanReady);
+    }
+
+    function pageInit() {
+      ape.init(onApeReady);
+    }
+
+  </script>
+  
+
+  <%= csrf_meta_tag %>
+</head>
+<body onload='pageInit()'>
+
+  <%= yield %>
+
+</body>
+</html>

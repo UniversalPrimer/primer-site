@@ -1,0 +1,11 @@
+
+
+<h2>Presentation upload</h2>
+
+<%= form_for :stream, :url => url_for(:controller => 'stream', :action => 'show'), :html => {:multipart => true} do |f| %>
+
+  <p>Stream name: <%= text_field_tag 'stream_name2' %>
+  <p><input type='file' name='file' multiple='multiple'></p>
+  <p><%= f.submit 'Upload' %></p>
+
+<% end %>

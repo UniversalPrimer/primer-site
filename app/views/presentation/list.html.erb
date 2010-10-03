@@ -1,0 +1,18 @@
+
+
+<h2>Presentations</h2>
+
+<% if @presentations.length == 0 %>
+
+  <p>No presentations uploaded</p>
+
+<% else %>
+
+  <ul>
+    <% @presentations.each do |p| %>
+      <li><%= p.pdf_file_name %>: <%= image_tag p.pdf(:thumb) %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+  

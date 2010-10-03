@@ -1,0 +1,68 @@
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  padding     : 40px;
+  margin      : 0px;
+
+  font-family : verdana;
+  font-size   : 0.88em;
+  color       : #232323;
+}
+#content {
+  width       : 400px;
+  background  : #ececec;
+  padding     : 20px;
+  margin      : 0px auto;
+  border-left      : 1px #cdcdcd solid;
+  border-right      : 1px #cdcdcd solid;
+}
+
+#content input,
+#content select {
+  width           : 100%;
+  font-size       : 1em;
+  padding         : 5px;
+  border  : 0px;
+  outline  : 1px #9a9a9a solid;
+  background  : #fefefe;
+  color  : #222;
+}
+#content input#remember_me {
+  outline         : 0px;
+}
+#content input.submit {
+  float           : left;
+  width      : 8em;
+  clear           : both;
+  border          : 2px #447 solid;
+  cursor          : pointer;
+  cursor          : hand;
+}
+#content input:focus {
+  outline         : 2px #3a2 solid;
+}
+#content input.error {
+  border  : 1px #ef3a21 solid !important;
+}
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+
+.flash_notice {
+  color: green;
+}
+
+.flash_error {
+  color: red;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -2,6 +2,8 @@
 var chan_ready = false;
 var chat_nickname = null;
 var paper = null;
+var cursor = null;
+var cursor_color = 'green';
 
 function doSend() {
     var msg = $('msg').value.escapeHTML();
@@ -160,22 +162,52 @@ function init_raphael() {
                         stroke: 'red'
                     });
 
+    cursor = paper.circle(50, 50, 5).attr({
+            stroke: cursor_color,
+            fill: cursor_color
+        });
+
 }
 
+// a line is composed from many (straight) paths
 function draw_lines(lines, color) {
+    var i
+    var line;
+    for(i=0; i < lines.length; i++) {
+        line = lines[i];
+        draw_paths(line);
+    }
+}
+
+
+function draw_paths(paths, color) {
 
     color = color || 'black';
 
     var i;
-    var line;
-    for(i=0; i < (lines.length - 1); i++) {
-        from = lines[i];
-        to = lines[i+1];
-        draw_line(from[0], from[1], to[0], to[1], color);
+    var from, to;
+    for(i=0; i < (paths.length - 1); i++) {
+        from = paths[i];
+        to = paths[i+1];
+        draw_path(from[0], from[1], to[0], to[1], color);
     }
 }
 
-function draw_line(x1, y1, x2, y2, color) {
+function denormalize_width(x) {
+    return Math.round(x * paper.width);
+}
+
+function denormalize_height(x) {
+    return Math.round(x * paper.height);
+}
+
+function draw_path(x1, y1, x2, y2, color) {
+
+    x1 = denormalize_width(x1);
+    x2 = denormalize_width(x2);
+    y1 = denormalize_height(y1);
+    y2 = denormalize_height(y2);
+
     paper.path('M'+x1+' '+y1+'L'+x2+' '+y2).attr({
             stroke: color
         });
@@ -185,6 +217,16 @@ function draw_clear() {
     paper.clear();
 }
 
+
+function cursor_clear() {
+    alert("not implemented");
+    return false;
+}
+
+function draw_cursor(x, y) {
+    alert("not implemented");
+    return false;
+}
 
 
 // ================================
@@ -205,12 +247,12 @@ function slideTest() {
 
 function raph_test() {
 
-    var lines = [
-                 [10, 10],
-                 [10, 150],
-                 [200, 30],
-                 [50, 470]
-                 ];
+    var lines = [[
+                 [0.10, 0.10],
+                 [0.10, 0.150],
+                 [0.200, 0.30],
+                 [0.50, 0.470]
+                 ]];
 
     draw_lines_cmd(lines, 'red');
 

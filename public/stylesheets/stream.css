@@ -23,6 +23,18 @@ html, body {
     width: 640px;
     height: 480px;
     border: 1px solid black;
+    z-index: 1;
+}
+
+#slide_viewer_overlay {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 12px;
+    width: 640px;
+    height: 480px;
+    border: 1px solid black;
+    z-index: 2;
 }
 
 #chat_messages {

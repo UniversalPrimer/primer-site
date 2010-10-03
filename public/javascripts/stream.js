@@ -67,8 +67,8 @@ function onReceive(json) {
         break;
 
     case 'slides/change':
-        if(!cmd.md5 || (cmd.md5 == '') || !cmd.page || (cmd.page == '')) {
-            alert("slide change without md5 or page: " + json);
+        if(!cmd.md5 || (cmd.md5 == '')) {
+            alert("slide change without md5: " + json);
             return false;
         }
         slide_change(cmd.md5, cmd.page, cmd.size);
@@ -212,7 +212,19 @@ function raph_test() {
                  [50, 470]
                  ];
 
+    draw_lines_cmd(lines, 'red');
 
-    draw_lines(lines, 'red');
+}
 
+
+function draw_lines_cmd(lines, color) {
+
+    var cmd = {
+        type: 'draw/lines',
+        lines: lines,
+        color: color
+    };
+
+    chan.send(Object.toJSON(cmd));
+    draw_lines(lines, color);
 }

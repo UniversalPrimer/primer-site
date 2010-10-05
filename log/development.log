@@ -7506,3 +7506,726 @@ DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is dep
   [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`id` = 6) LIMIT 1[0m
 Sent file /home/juul/primer/git/primer-site/public/files/streams/6/datafiles/1/sizes/medium_0.png (0.2ms)
 Completed 200 OK in 52ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 04 14:09:31 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (204.7ms)
+Completed 200 OK in 240ms (Views: 238.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Mon Oct 04 14:09:34 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 190ms (Views: 94.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Mon Oct 04 14:11:01 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 41ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Mon Oct 04 14:11:14 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"Juul", "password"=>"[FILTERED]"}, "authenticity_token"=>"jFeuxAgjTpgPftKRq7jWYfTeyyEyOrT5ROeryOvTALo=", "utf8"=>"✓"}
+  [1m[36mSQL (30.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (34.6ms)[0m  SELECT `users`.* FROM `users` WHERE (LOWER(`users`.username) = 'juul') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE `users` SET `failed_login_count` = 1, `perishable_token` = 'DiMIj63eK6Hh8haHzlSs', `updated_at` = '2010-10-04 12:11:15' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (114.8ms)[0m  [1mCOMMIT[0m
+Rendered user_sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 665ms (Views: 25.3ms | ActiveRecord: 180.5ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Mon Oct 04 14:11:18 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"Juul", "password"=>"[FILTERED]"}, "authenticity_token"=>"jFeuxAgjTpgPftKRq7jWYfTeyyEyOrT5ROeryOvTALo=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (LOWER(`users`.username) = 'juul') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `current_login_at` = '2010-10-04 12:11:19', `failed_login_count` = 0, `last_login_at` = '2010-10-03 15:13:31', `login_count` = 13, `perishable_token` = 'icJV80TLfjCWtaEHDX_a', `updated_at` = '2010-10-04 12:11:19' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (102.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://apel.grafiki.org/
+Completed 302 Found in 189ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 04 14:11:19 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered welcome/index.html.erb within layouts/application (180.1ms)
+Completed 200 OK in 187ms (Views: 185.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/upload" for 127.0.0.1 at Mon Oct 04 14:11:29 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UploadController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered upload/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 77ms (Views: 29.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/foo" for 127.0.0.1 at Mon Oct 04 14:11:57 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"foo"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'foo') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  describe `streams`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `streams` (`created_at`, `name`, `updated_at`) VALUES ('2010-10-04 12:11:57', 'foo', '2010-10-04 12:11:57')[0m
+  [1m[35mSQL (361.9ms)[0m  COMMIT
+Rendered stream/show.html.erb within layouts/stream (8.3ms)
+Completed 200 OK in 420ms (Views: 32.2ms | ActiveRecord: 363.9ms)
+
+
+Started GET "/stream/foo" for 127.0.0.1 at Mon Oct 04 14:12:15 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"foo"}
+  [1m[36mStream Load (0.3ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'foo') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (7.6ms)
+Completed 200 OK in 27ms (Views: 11.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=0&size=medium" for 127.0.0.1 at Mon Oct 04 14:12:29 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by DataFileController#image as HTML
+  Parameters: {"size"=>"medium", "page"=>"0", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[35mDataFile Load (0.5ms)[0m  SELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1
+  [1m[36mStream Load (0.3ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`id` = 6) LIMIT 1[0m
+Sent file /home/juul/primer/git/primer-site/public/files/streams/6/datafiles/1/sizes/medium_0.png (24.5ms)
+Completed 200 OK in 200ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 05 02:05:24 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (186.1ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:05:28 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mSQL (7.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mStream Load (26.4ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (18.9ms)
+Completed 200 OK in 305ms (Views: 65.8ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/javascripts/flowplayer.js" for 127.0.0.1 at Tue Oct 05 02:05:29 +0200 2010
+
+ActionController::RoutingError (No route matches "/javascripts/flowplayer.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/javascripts/flowplayer.js" for 127.0.0.1 at Tue Oct 05 02:05:29 +0200 2010
+
+ActionController::RoutingError (No route matches "/javascripts/flowplayer.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:06:00 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.4ms)
+Completed 200 OK in 28ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:06:35 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.3ms)
+Completed 200 OK in 31ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:06:36 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:06:40 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.7ms)
+Completed 200 OK in 33ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:06:41 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:09:32 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (10.1ms)
+Completed 200 OK in 36ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:09:34 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (105.4ms)
+Completed 200 OK in 140ms (Views: 112.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:10:26 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (18.8ms)
+Completed 200 OK in 49ms (Views: 23.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:10:27 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:10:31 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (11.3ms)
+Completed 200 OK in 128ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:10:32 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:10:39 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.6ms)
+Completed 200 OK in 28ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:10:41 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.2ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.5ms)
+Completed 200 OK in 34ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:11:06 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (14.3ms)
+Completed 200 OK in 42ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:11:08 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.4ms)
+Completed 200 OK in 31ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:12:40 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.4ms)
+Completed 200 OK in 37ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:12:42 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (9.3ms)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:15:30 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (10.8ms)
+Completed 200 OK in 35ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:15:32 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.8ms)
+Completed 200 OK in 32ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:16:17 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.2ms)
+Completed 200 OK in 28ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/flash/lol" for 127.0.0.1 at Tue Oct 05 02:16:19 +0200 2010
+
+ActionController::RoutingError (No route matches "/flash/lol"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:19:37 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.7ms)
+Completed 200 OK in 30ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.4.js" for 127.0.0.1 at Tue Oct 05 02:19:38 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.4.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/stream/flowplayer-3.1.4.js" for 127.0.0.1 at Tue Oct 05 02:19:38 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.4.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:20:24 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.8ms)
+Completed 200 OK in 29ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:20:25 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:20:53 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.0ms)
+Completed 200 OK in 31ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:20:55 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.4ms)
+Completed 200 OK in 111ms (Views: 93.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:21:04 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.4ms)
+Completed 200 OK in 33ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:21:06 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.2ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.7ms)
+Completed 200 OK in 138ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:22:36 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (9.3ms)
+Completed 200 OK in 49ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:22:38 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.5ms)
+Completed 200 OK in 32ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:23:29 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (9.7ms)
+Completed 200 OK in 36ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:23:34 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (5.5ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (25.4ms)
+Completed 200 OK in 67ms (Views: 29.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:24:15 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.5ms)
+Completed 200 OK in 34ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:24:18 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (6.3ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (18.4ms)
+Completed 200 OK in 61ms (Views: 22.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:26:14 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.9ms)
+Completed 200 OK in 28ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:26:17 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.8ms)
+Completed 200 OK in 32ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:26:41 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.0ms)
+Completed 200 OK in 32ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:26:42 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:26:47 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.3ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (11.6ms)
+Completed 200 OK in 47ms (Views: 16.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stream/flowplayer-3.1.5.swf" for 127.0.0.1 at Tue Oct 05 02:26:48 +0200 2010
+
+ActionController::RoutingError (No route matches "/stream/flowplayer-3.1.5.swf"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:27:33 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.8ms)
+Completed 200 OK in 33ms (Views: 13.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:27:36 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (5.2ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (18.7ms)
+Completed 200 OK in 223ms (Views: 28.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:27:50 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.6ms)
+Completed 200 OK in 37ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:27:53 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (176.8ms)
+Completed 200 OK in 217ms (Views: 184.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/flash/" for 127.0.0.1 at Tue Oct 05 02:37:48 +0200 2010
+
+ActionController::RoutingError (No route matches "/flash"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:38:45 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (16.1ms)
+Completed 200 OK in 58ms (Views: 27.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:38:50 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.0ms)
+Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:39:13 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.2ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (12.3ms)
+Completed 200 OK in 38ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:40:12 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.2ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.8ms)
+Completed 200 OK in 38ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:40:26 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.1ms)
+Completed 200 OK in 40ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:40:29 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.2ms)
+Completed 200 OK in 29ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:40:43 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.6ms)
+Completed 200 OK in 32ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:41:02 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.2ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.3ms)
+Completed 200 OK in 33ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:41:16 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (9.8ms)
+Completed 200 OK in 31ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:41:39 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.3ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (8.4ms)
+Completed 200 OK in 27ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:42:13 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.0ms)
+Completed 200 OK in 38ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:42:39 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (17.4ms)
+Completed 200 OK in 63ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:43:06 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (8.7ms)
+Completed 200 OK in 32ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=0&size=medium" for 127.0.0.1 at Tue Oct 05 02:43:40 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by DataFileController#image as HTML
+  Parameters: {"size"=>"medium", "page"=>"0", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[35mDataFile Load (0.4ms)[0m  SELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`id` = 6) LIMIT 1[0m
+Sent file /home/juul/primer/git/primer-site/public/files/streams/6/datafiles/1/sizes/medium_0.png (23.3ms)
+Completed 200 OK in 193ms
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:44:37 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.2ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.5ms)
+Completed 200 OK in 106ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:46:11 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.2ms)
+Completed 200 OK in 40ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:47:55 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (25.1ms)
+Completed 200 OK in 64ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:48:02 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[36mStream Load (0.1ms)[0m  [1mSELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1[0m
+Rendered stream/show.html.erb within layouts/stream (10.7ms)
+Completed 200 OK in 40ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/lol" for 127.0.0.1 at Tue Oct 05 02:48:17 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by StreamController#show as HTML
+  Parameters: {"stream_name"=>"lol"}
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`name` = 'lol') LIMIT 1
+Rendered stream/show.html.erb within layouts/stream (9.0ms)
+Completed 200 OK in 27ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=0&size=medium" for 127.0.0.1 at Tue Oct 05 02:49:02 +0200 2010
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by DataFileController#image as HTML
+  Parameters: {"size"=>"medium", "page"=>"0", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[36mDataFile Load (0.1ms)[0m  [1mSELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1[0m
+  [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`id` = 6) LIMIT 1
+Sent file /home/juul/primer/git/primer-site/public/files/streams/6/datafiles/1/sizes/medium_0.png (0.2ms)
+Completed 200 OK in 51ms

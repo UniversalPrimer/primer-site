@@ -162,11 +162,12 @@ function init_raphael() {
                         stroke: 'red'
                     });
 
+    /*
     cursor = paper.circle(50, 50, 5).attr({
             stroke: cursor_color,
             fill: cursor_color
         });
-
+    */
 }
 
 // a line is composed from many (straight) paths
@@ -175,7 +176,7 @@ function draw_lines(lines, color) {
     var line;
     for(i=0; i < lines.length; i++) {
         line = lines[i];
-        draw_paths(line);
+        draw_paths(line, color);
     }
 }
 
@@ -218,15 +219,17 @@ function draw_clear() {
 }
 
 
+function draw_cursor(x, y) {
+    alert("not implemented");
+    return false;
+}
+
 function cursor_clear() {
     alert("not implemented");
     return false;
 }
 
-function draw_cursor(x, y) {
-    alert("not implemented");
-    return false;
-}
+
 
 
 // ================================

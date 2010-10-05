@@ -9,7 +9,7 @@ html, body {
 #chat {
     position: absolute;
     top: 50px;
-    right: 50px;
+    right: 20px;
     font-size: 12px;
     width: 200px;
     border: 1px solid black;
@@ -18,7 +18,7 @@ html, body {
 #slide_viewer {
     position: absolute;
     top: 50px;
-    left: 50px;
+    left: 20px;
     font-size: 12px;
     width: 640px;
     height: 480px;
@@ -29,12 +29,21 @@ html, body {
 #slide_viewer_overlay {
     position: absolute;
     top: 50px;
-    left: 50px;
+    left: 20px;
     font-size: 12px;
     width: 640px;
     height: 480px;
     border: 1px solid black;
     z-index: 2;
+}
+
+#video {
+    position: absolute;
+    display: block;
+    top: 70px;
+    left: 700px;
+    width: 320px;
+    height: 320px;
 }
 
 #chat_messages {

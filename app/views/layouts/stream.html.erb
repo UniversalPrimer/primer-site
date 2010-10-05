@@ -8,10 +8,13 @@
   <%= javascript_include_tag 'ape-jsf/Build/uncompressed/apeClientJS.js' %>
   <%= javascript_include_tag 'ape_config.js' %>
   <%= javascript_include_tag 'ape.js' %>
+  <%= javascript_include_tag 'flowplayer-3.1.4.js' %>
   <%= javascript_include_tag 'stream.js' %>
+
   <script type='text/javascript'>
 
     var chan = null;
+    // TODO injection
     var streamName = "<%= @stream.name %>";
 
     function onApeReady() {
@@ -19,8 +22,30 @@
     }
 
     function pageInit() {
-      init_raphael();
       ape.init(onApeReady);
+      init_raphael();
+      init_flowplayer();
+    }
+
+    function init_flowplayer() {
+
+			flowplayer('video', '/flash/flowplayer-3.1.5.swf', {
+        
+
+        clip: {
+          url: 'foobar',
+          live: true,
+          provider: 'rtmp'
+        },
+
+        plugins: {
+
+          rtmp: {
+            url: '/flash/flowplayer.rtmp-3.1.3.swf',
+            netConnectionUrl: 'rtmp://apel.grafiki.org/flvplayback'
+          }
+        }
+      });
     }
 
   </script>
@@ -31,6 +56,9 @@
 <body onload='pageInit()'>
 
   <%= yield %>
+
+	<div style='display:block;width:320px;height:240px' id='video'></div>
+    
 
 </body>
 </html>

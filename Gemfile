@@ -18,8 +18,13 @@ gem 'dynamic_form' # error_messages_for and other helpers
 
 # gem 'nokogiri'
 
+gem 'mongrel'
 
-
+# pushy stuff
+gem 'amqp'
+#gem 'mq'
+gem 'thin'
+gem 'eventmachine'
 
 
 # Use unicorn as the web server

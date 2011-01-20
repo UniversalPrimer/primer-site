@@ -1,0 +1,7 @@
+
+to start:
+
+  rails s thin
+
+
+Thin is needed as we're using eventmachine

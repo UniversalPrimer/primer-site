@@ -8229,3 +8229,2503 @@ DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is dep
   [1m[35mStream Load (0.1ms)[0m  SELECT `streams`.* FROM `streams` WHERE (`streams`.`id` = 6) LIMIT 1
 Sent file /home/juul/primer/git/primer-site/public/files/streams/6/datafiles/1/sizes/medium_0.png (0.2ms)
 Completed 200 OK in 51ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 22:59:32 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (626.3ms)
+Completed 200 OK in 638ms (Views: 635.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Thu Jan 06 22:59:51 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 52ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Thu Jan 06 22:59:52 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"Juul", "password"=>"[FILTERED]"}, "authenticity_token"=>"brni+z9cskT7VE8HzgUaD2ebYkCT0rMeuOiZGJJFnA4=", "utf8"=>"✓"}
+  [1m[36mSQL (76.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (117.0ms)[0m  SELECT `users`.* FROM `users` WHERE (LOWER(`users`.username) = 'juul') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (48.2ms)[0m  UPDATE `users` SET `current_login_at` = '2011-01-07 06:59:53', `last_login_at` = '2010-10-04 12:11:19', `login_count` = 14, `perishable_token` = 'p2CKIrPYebjgJVY-YdKS', `updated_at` = '2011-01-07 06:59:53' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (152.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 974ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 22:59:53 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (43.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered welcome/index.html.erb within layouts/application (293.4ms)
+Completed 200 OK in 314ms (Views: 269.5ms | ActiveRecord: 43.6ms)
+
+
+Started GET "/users/current/edit" for 127.0.0.1 at Thu Jan 06 22:59:57 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"current"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered users/_form.html.erb (12.3ms)
+Rendered users/edit.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 313ms (Views: 28.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 23:00:09 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered welcome/index.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Thu Jan 06 23:00:12 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 224ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 23:00:12 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Thu Jan 06 23:00:14 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 50ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Thu Jan 06 23:00:15 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"Juul", "password"=>"[FILTERED]"}, "authenticity_token"=>"brni+z9cskT7VE8HzgUaD2ebYkCT0rMeuOiZGJJFnA4=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (LOWER(`users`.username) = 'juul') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_login_at` = '2011-01-07 07:00:15', `last_login_at` = '2011-01-07 06:59:53', `login_count` = 15, `perishable_token` = 'LTl7IGvb3wCipsFAdNx0', `updated_at` = '2011-01-07 07:00:15' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (55.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 23:00:16 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered welcome/index.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: ActionController::Dispatcher.new is deprecated, use Rails.application instead. (called from config.ru:11)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 23:04:54 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (17.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered welcome/index.html.erb within layouts/application (295.9ms)
+Completed 200 OK in 303ms (Views: 284.6ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:24:13 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:68:in `on_start'
+  lib/pushy/pushy/app.rb:31:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:40:03 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:42:34 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:45:52 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:46:35 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:48:11 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 16:54:46 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 17:02:26 -0800 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 17:20:49 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (305.5ms)
+Completed 200 OK in 313ms (Views: 312.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:20:53 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:73:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:21:56 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:22:19 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:23:28 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:25:46 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:70:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from output_value at /usr/lib/ruby/1.8/irb.rb:310)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:33:17 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:38:13 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:38:30 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:44:30 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:70:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:45:33 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:70:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:47:10 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:50:40 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:70:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.1ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:51:29 -0800 2011
+
+RuntimeError (eventmachine not initialized: evma_install_oneshot_timer):
+  lib/pushy/pushy/app.rb:70:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:51:47 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 17:54:02 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 18:01:41 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:01:58 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (117.0ms)
+Completed 200 OK in 123ms (Views: 121.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:02:19 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.1ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:04:08 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (46.3ms)
+Completed 200 OK in 119ms (Views: 118.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:04:30 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (41.9ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:04:51 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (113.3ms)
+Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:04:56 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.3ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:05:50 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (113.3ms)
+Completed 200 OK in 121ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:06:45 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.3ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:06:50 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (119.8ms)
+Completed 200 OK in 124ms (Views: 123.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:07:01 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.7ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:07:04 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (115.4ms)
+Completed 200 OK in 120ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:07:25 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.0ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:07:28 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (111.0ms)
+Completed 200 OK in 115ms (Views: 114.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:07:46 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.5ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:06 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (120.9ms)
+Completed 200 OK in 126ms (Views: 125.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:18 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (44.5ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:26 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (111.1ms)
+Completed 200 OK in 116ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:31 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.2ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:39 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (117.5ms)
+Completed 200 OK in 122ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:46 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.8ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:08:52 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.4ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:09:02 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.3ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:09:22 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.6ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:09:47 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+ERROR: compiling _app_views_layouts_foo_html_erb__984381762__617011668_0 RAISED compile error
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/sse_new.js' );@outp...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting ')'
+...g 'pushy/transport/sse_new.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/sse.js' );@output_b...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:11: syntax error, unexpected tSTRING_BEG, expecting ')'
+...e_tag 'pushy/transport/sse.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/long_poll.js' );@ou...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:12: syntax error, unexpected tSTRING_BEG, expecting ')'
+...'pushy/transport/long_poll.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/html_file.js' );@ou...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting ')'
+...'pushy/transport/html_file.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport.js' );@output_buffe...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting ')'
+...clude_tag 'pushy/transport.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:15: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/uuid.js' );@output_buffer.saf...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting ')'
+...pt_include_tag 'pushy/uuid.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:18: syntax error, unexpected '<', expecting ')'
+  <script type="text/javascript" charset="utf-8">
+   ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <script type="text/javascript" charset="utf-8">
+                                        ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:47: unknown regexp option - p
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:47: invalid regular expression; there's no previous pattern, to which '*' would define cardinality at 1: /*
+
+    var transport = null;
+
+    function page_init() {
+    
+      transport = new Pusher.Transport();
+    
+      transport.on_connect = function() {
+        alert(\'connected!\');
+      };
+
+      transport.on_connect_retry = function(try_count) {
+        alert(\'retrying connection, time number: \' + try_count);
+      };
+
+      transport.on_reconnect = function() {
+        alert(\'reconnected\');
+      };
+
+      transport.on_disconnect = function(final_try_count) {
+        alert(\'Disconnected after \' + final_try_count + \' reconnect attempts\');
+      };
+
+      transport.on_receive = function(data) {
+        $("log").insert({ bottom: "<p>" + data.content + "</
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+        $("log").insert({ bottom: "<p style=...
+              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+...g").insert({ bottom: "<p style=\'color:red\'>" + str + "</p>...
+                              ^
+Function body:           def _app_views_layouts_foo_html_erb__984381762__617011668_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/foo";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+  <title>Universal Primer with Pushy! - ');@output_buffer.append= ( title );@output_buffer.safe_concat('</title>
+  ');@output_buffer.append= ( stylesheet_link_tag 'layout' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  ');@output_buffer.append= ( javascript_include_tag 'pushy/pushy.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( # javascript_include_tag 'pushy/transport/xhr_stream.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( # javascript_include_tag 'pushy/transport/sse_new.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( # javascript_include_tag 'pushy/transport/sse.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( # javascript_include_tag 'pushy/transport/long_poll.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag 'pushy/transport/html_file.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag 'pushy/transport.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag 'pushy/uuid.js' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+
+  <script type="text/javascript" charset="utf-8">
+
+    alert(Pusher.Version);
+
+/*
+
+    var transport = null;
+
+    function page_init() {
+    
+      transport = new Pusher.Transport();
+    
+      transport.on_connect = function() {
+        alert(\'connected!\');
+      };
+
+      transport.on_connect_retry = function(try_count) {
+        alert(\'retrying connection, time number: \' + try_count);
+      };
+
+      transport.on_reconnect = function() {
+        alert(\'reconnected\');
+      };
+
+      transport.on_disconnect = function(final_try_count) {
+        alert(\'Disconnected after \' + final_try_count + \' reconnect attempts\');
+      };
+
+      transport.on_receive = function(data) {
+        $("log").insert({ bottom: "<p>" + data.content + "</p>" });
+      };
+
+      transport.on_unload = function() {
+        alert(\'unloaded\');
+      };
+
+      transport.on_error = function(str) {
+        $("log").insert({ bottom: "<p style=\'color:red\'>" + str + "</p>" });
+      };
+
+      transport.on_ping = function() {
+        $("log").insert({ bottom: "<p style=\'color:orange\'>ping</p>" });
+      };
+
+
+    }
+
+    function page_uninit() {
+      if(transport != null) {
+        transport.unload();
+      }
+    }
+
+    function connect() {
+      transport.connect(\'/pusher\', 1);
+    }
+
+    function disconnect() {
+      transport.disconnect();
+    }
+*/
+  </script>
+
+
+  ');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body>
+  <div id=\'user_nav\'>
+');     if current_user 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( link_to 'Edit Profile', edit_user_path(:current) );@output_buffer.safe_concat(' | 
+      ');@output_buffer.append= ( link_to 'Logout', logout_path );@output_buffer.safe_concat('
+');     else 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( link_to 'Sign up', new_user_path );@output_buffer.safe_concat(' | 
+      ');@output_buffer.append= ( link_to 'Login', login_path );@output_buffer.safe_concat('
+');     end 
+@output_buffer.safe_concat('  </div>
+
+  <div id=\'content\'>
+    <p class=\'flash_error\'>
+      ');@output_buffer.append= ( flash[:error] );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </p>
+    <p class=\'flash_notice\'>
+      ');@output_buffer.append= ( flash[:notice] );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </p>
+ 
+    <h1>');@output_buffer.append= ( title );@output_buffer.safe_concat('</h1>
+
+    <div class=\'entry\'>
+      ');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:118:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:62:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__745079412__process_action__914358341__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/mongrel.rb:67:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/mongrel.rb:38:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered foo/test.html.erb within layouts/foo (29.7ms)
+Completed   in 39ms
+
+ActionView::Template::Error (compile error
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/sse_new.js' );@outp...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting ')'
+...g 'pushy/transport/sse_new.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/sse.js' );@output_b...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:11: syntax error, unexpected tSTRING_BEG, expecting ')'
+...e_tag 'pushy/transport/sse.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/long_poll.js' );@ou...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:12: syntax error, unexpected tSTRING_BEG, expecting ')'
+...'pushy/transport/long_poll.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport/html_file.js' );@ou...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting ')'
+...'pushy/transport/html_file.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/transport.js' );@output_buffe...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting ')'
+...clude_tag 'pushy/transport.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:15: syntax error, unexpected tIDENTIFIER, expecting ')'
+... javascript_include_tag 'pushy/uuid.js' );@output_buffer.saf...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting ')'
+...pt_include_tag 'pushy/uuid.js' );@output_buffer.safe_concat(...
+                              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:18: syntax error, unexpected '<', expecting ')'
+  <script type="text/javascript" charset="utf-8">
+   ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <script type="text/javascript" charset="utf-8">
+                                        ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:47: unknown regexp option - p
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:47: invalid regular expression; there's no previous pattern, to which '*' would define cardinality at 1: /*
+
+    var transport = null;
+
+    function page_init() {
+    
+      transport = new Pusher.Transport();
+    
+      transport.on_connect = function() {
+        alert(\'connected!\');
+      };
+
+      transport.on_connect_retry = function(try_count) {
+        alert(\'retrying connection, time number: \' + try_count);
+      };
+
+      transport.on_reconnect = function() {
+        alert(\'reconnected\');
+      };
+
+      transport.on_disconnect = function(final_try_count) {
+        alert(\'Disconnected after \' + final_try_count + \' reconnect attempts\');
+      };
+
+      transport.on_receive = function(data) {
+        $("log").insert({ bottom: "<p>" + data.content + "</
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+        $("log").insert({ bottom: "<p style=...
+              ^
+/home/juul/primer/git/primer-site/app/views/layouts/foo.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+...g").insert({ bottom: "<p style=\'color:red\'>" + str + "</p>...
+                              ^):
+    7: 
+    8:   <%= javascript_include_tag 'pushy/pushy.js' %>
+    9:   <%= # javascript_include_tag 'pushy/transport/xhr_stream.js' %>
+    10:   <%= # javascript_include_tag 'pushy/transport/sse_new.js' %>
+    11:   <%= # javascript_include_tag 'pushy/transport/sse.js' %>
+    12:   <%= # javascript_include_tag 'pushy/transport/long_poll.js' %>
+    13:   <%= javascript_include_tag 'pushy/transport/html_file.js' %>
+  app/views/layouts/foo.html.erb:118:in `compile'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.2ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:10:02 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.4ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:10:16 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.2ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:10:28 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.1ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:10:34 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.7ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:11:18 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.3ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:11:30 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.2ms)
+Completed 200 OK in 117ms (Views: 115.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:12:00 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.5ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:15:27 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (118.1ms)
+Completed 200 OK in 123ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pusher?transport=xhr_stream&channel_id=1&session_id=Vf7RcauDhHC0" for 127.0.0.1 at Sat Jan 08 18:15:33 -0800 2011
+
+ActionController::RoutingError (No route matches "/pusher"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/pusher?transport=xhr_stream&channel_id=1&session_id=3rbM1wbxHD7J" for 127.0.0.1 at Sat Jan 08 18:15:37 -0800 2011
+
+ActionController::RoutingError (No route matches "/pusher"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:15:59 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (127.6ms)
+Completed 200 OK in 132ms (Views: 131.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=dFBfL9Zcaxlc" for 127.0.0.1 at Sat Jan 08 18:16:02 -0800 2011
+
+NameError (uninitialized constant Pushy::Channel::AMQP::MQ):
+  lib/pushy/pushy/channel/amqp.rb:39:in `connect'
+  lib/pushy/pushy/channel/amqp.rb:17:in `subscribe'
+  lib/pushy/pushy/app.rb:57:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:24:06 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (46.3ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=0OBd58Qzl5tr" for 127.0.0.1 at Sat Jan 08 18:24:10 -0800 2011
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=qSroygcfyhgF" for 127.0.0.1 at Sat Jan 08 18:24:14 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:25:42 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (50.9ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=Br6eyYi4fTBO" for 127.0.0.1 at Sat Jan 08 18:25:42 -0800 2011
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=7Dtl7rA8gNYJ" for 127.0.0.1 at Sat Jan 08 18:25:46 -0800 2011
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=WWYAaCA9WgNP" for 127.0.0.1 at Sat Jan 08 18:25:49 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:30:11 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (48.7ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=FWDKOsKA5ZwH" for 127.0.0.1 at Sat Jan 08 18:30:15 -0800 2011
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=A93ETaxhPusd" for 127.0.0.1 at Sat Jan 08 18:30:18 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:34:03 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (51.8ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=3yF3I1y1XDat" for 127.0.0.1 at Sat Jan 08 18:34:06 -0800 2011
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=lDOWRRHZ9SeR" for 127.0.0.1 at Sat Jan 08 18:34:09 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:41:23 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (45.6ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=HXNJEcCcfpBe" for 127.0.0.1 at Sat Jan 08 18:41:26 -0800 2011
+
+ThreadError (uncaught throw `async' in thread 0x9571308):
+  lib/pushy/pushy/app.rb:71:in `throw'
+  lib/pushy/pushy/app.rb:71:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 18:53:29 -0800 2011
+
+
+Started GET "/pushy" for 127.0.0.1 at Sat Jan 08 18:54:36 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:54:52 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.8ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:54:56 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.1ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=kWLWNiPGNPqY" for 127.0.0.1 at Sat Jan 08 18:55:00 -0800 2011
+
+ArgumentError (Pushy is not missing constant Session!):
+  lib/pushy/pushy/session_tracker.rb:20:in `start'
+  lib/pushy/pushy/app.rb:51:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=J30ShWMVGonN" for 127.0.0.1 at Sat Jan 08 18:55:04 -0800 2011
+
+ArgumentError (Pushy is not missing constant Session!):
+  lib/pushy/pushy/session_tracker.rb:20:in `start'
+  lib/pushy/pushy/app.rb:51:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=J30ShWMVGonN" for 127.0.0.1 at Sat Jan 08 18:58:36 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 18:58:36 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (45.3ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=CZfxjhDEaeok" for 127.0.0.1 at Sat Jan 08 18:58:40 -0800 2011
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  lib/pushy/pushy/app.rb:57:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=oNqfVJYu5fPN" for 127.0.0.1 at Sat Jan 08 19:01:49 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:01:50 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.0ms)
+Completed 200 OK in 43ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=uv0dAwx3rKgd" for 127.0.0.1 at Sat Jan 08 19:01:53 -0800 2011
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  lib/pushy/pushy/app.rb:57:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=2wdnyUOGkn4l" for 127.0.0.1 at Sat Jan 08 19:01:56 -0800 2011
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  lib/pushy/pushy/app.rb:57:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:03:37 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.6ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=F6o6Sn9e3Hxw" for 127.0.0.1 at Sat Jan 08 19:03:40 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=0HxvkLBD6DG0" for 127.0.0.1 at Sat Jan 08 19:03:42 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:05:13 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (45.3ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=BLTUNlTKDkdD" for 127.0.0.1 at Sat Jan 08 19:05:16 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=sAhEsB1XyFVa" for 127.0.0.1 at Sat Jan 08 19:05:18 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:07:01 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.4ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=I3KDr22lqL6S" for 127.0.0.1 at Sat Jan 08 19:07:04 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=GGs7nEW4j5eg" for 127.0.0.1 at Sat Jan 08 19:07:06 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:78:in `on_start'
+  lib/pushy/pushy/app.rb:33:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=GGs7nEW4j5eg" for 127.0.0.1 at Sat Jan 08 19:07:57 -0800 2011
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:07:57 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.2ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=CrgKM8SFpOIW" for 127.0.0.1 at Sat Jan 08 19:08:00 -0800 2011
+
+ArgumentError (Pushy is not missing constant Session!):
+  lib/pushy/pushy/session_tracker.rb:20:in `start'
+  lib/pushy/pushy/app.rb:54:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:11:00 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.0ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=jChWkFqNvrXX" for 127.0.0.1 at Sat Jan 08 19:11:03 -0800 2011
+
+ArgumentError (Pushy is not missing constant Session!):
+  lib/pushy/pushy/session_tracker.rb:22:in `start'
+  lib/pushy/pushy/app.rb:54:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=18JeTwmiwMwC" for 127.0.0.1 at Sat Jan 08 19:11:05 -0800 2011
+
+ArgumentError (Pushy is not missing constant Session!):
+  lib/pushy/pushy/session_tracker.rb:22:in `start'
+  lib/pushy/pushy/app.rb:54:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:12:55 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.2ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=1ZQEPXq3MvdK" for 127.0.0.1 at Sat Jan 08 19:12:58 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:79:in `on_start'
+  lib/pushy/pushy/app.rb:34:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started GET "/pushy?transport=xhr_stream&channel_id=1&session_id=scohZAFZUYFl" for 127.0.0.1 at Sat Jan 08 19:13:00 -0800 2011
+
+NameError (uninitialized constant Pushy::App::SESSION_TIMEOUT):
+  lib/pushy/pushy/app.rb:79:in `on_start'
+  lib/pushy/pushy/app.rb:34:in `call'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 19:36:46 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (108.9ms)
+Completed 200 OK in 116ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 19:36:56 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy/" for 127.0.0.1 at Sat Jan 08 19:37:02 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pusher.js" for 127.0.0.1 at Sat Jan 08 19:37:42 -0800 2011
+
+ActionController::RoutingError (No route matches "/pusher.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/pusher.js" for 127.0.0.1 at Sat Jan 08 19:37:42 -0800 2011
+
+ActionController::RoutingError (No route matches "/pusher.js"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 19:37:46 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (102.9ms)
+Completed 200 OK in 111ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:38:53 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.7ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:38:57 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (106.5ms)
+Completed 200 OK in 111ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:40:49 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.8ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 08 19:42:36 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.5ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 08 22:57:47 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Jan 09 17:42:14 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 144ms (Views: 143.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 17:42:19 -0800 2011
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from /home/juul/primer/git/primer-site/app/controllers/application_controller.rb:6)
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.7ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 17:44:17 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.8ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 17:57:44 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.7ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 17:57:52 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.2ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 17:58:17 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.7ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 18:04:01 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.1ms)
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Jan 09 18:58:58 -0800 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 18:59:05 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.9ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 18:59:32 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (108.8ms)
+Completed 200 OK in 113ms (Views: 112.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:00:57 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.6ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:05:00 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (111.1ms)
+Completed 200 OK in 115ms (Views: 114.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:07:15 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.5ms)
+Completed 200 OK in 44ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:07:19 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (111.5ms)
+Completed 200 OK in 115ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Jan 09 19:07:55 -0800 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:08:22 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.9ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:08:27 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.4ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:09:39 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.0ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:10:13 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.6ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:10:17 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.1ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:13:00 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.8ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:13:43 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.2ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:14:04 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.9ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:14:47 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.3ms)
+Completed 200 OK in 40ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:17:05 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (112.9ms)
+Completed 200 OK in 117ms (Views: 116.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:17:16 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.5ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:18:21 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (105.0ms)
+Completed 200 OK in 109ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/pushy123?transport=xhr_stream&channel_id=1&session_id=ixIkLMMy50he" for 127.0.0.1 at Sun Jan 09 19:18:24 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started OPTIONS "/pushy123?transport=xhr_stream&channel_id=1&session_id=YxhggM0cxW2i" for 127.0.0.1 at Sun Jan 09 19:18:25 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started OPTIONS "/pushy123?transport=xhr_stream&channel_id=1&session_id=GFEYMNQQk47G" for 127.0.0.1 at Sun Jan 09 19:18:27 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started OPTIONS "/pushy123?transport=xhr_stream&channel_id=1&session_id=38Q2pO4eAeTk" for 127.0.0.1 at Sun Jan 09 19:18:28 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started OPTIONS "/pushy123?transport=xhr_stream&channel_id=1&session_id=38Q2pO4eAeTk" for 127.0.0.1 at Sun Jan 09 19:18:31 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:18:42 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.2ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy123?transport=xhr_stream&channel_id=1&session_id=8gtvswQXbIL2" for 127.0.0.1 at Sun Jan 09 19:18:44 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pushy123?transport=xhr_stream&channel_id=1&session_id=bE3tdMMjFnaD" for 127.0.0.1 at Sun Jan 09 19:18:47 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pushy123?transport=xhr_stream&channel_id=1&session_id=wSbiwj87FnWJ" for 127.0.0.1 at Sun Jan 09 19:18:52 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy123"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:19:33 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (41.4ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:20:02 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.9ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:20:09 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.3ms)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:20:54 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.7ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 09 19:22:28 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.7ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:35:47 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (775.0ms)
+Completed 200 OK in 813ms (Views: 812.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:36:31 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.7ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:36:32 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy_iframe/show"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/pushy_iframe/" for 127.0.0.1 at Sat Jan 15 23:37:15 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy_iframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/PushyIframe/" for 127.0.0.1 at Sat Jan 15 23:37:45 -0800 2011
+
+ActionController::RoutingError (No route matches "/PushyIframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/PushyIframe/show" for 127.0.0.1 at Sat Jan 15 23:37:47 -0800 2011
+
+ActionController::RoutingError (No route matches "/PushyIframe/show"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pushy_iframe/" for 127.0.0.1 at Sat Jan 15 23:38:32 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy_iframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/pushy_iframe/" for 127.0.0.1 at Sat Jan 15 23:38:33 -0800 2011
+
+ActionController::RoutingError (No route matches "/pushy_iframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:39:21 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.9ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:39:22 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Completed   in 34ms
+
+ActionView::MissingTemplate (Missing layout layouts/pushy_iframe with {:formats=>[:html], :handlers=>[:rjs, :rhtml, :rxml, :erb, :builder], :locale=>[:en, :en]} in view paths "/home/juul/primer/git/primer-site/app/views"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:39:55 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (62.3ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:39:56 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.2ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:40:21 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (102.5ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:40:22 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.5ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:41:08 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.3ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:41:10 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.4ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:41:28 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (98.0ms)
+Completed 200 OK in 102ms (Views: 101.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:41:29 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.4ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:41:32 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.9ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:41:33 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.5ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:41:42 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:41:51 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.5ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:41:52 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:42:06 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.4ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:42:07 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.4ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:42:18 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:42:22 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.2ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:42:33 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.8ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:42:34 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (7.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:42:52 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.4ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:42:53 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:43:13 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.5ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:43:14 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (5.9ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sat Jan 15 23:44:12 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (41.7ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe/show" for 127.0.0.1 at Sat Jan 15 23:44:13 -0800 2011
+  Processing by PushyIframeController#show as HTML
+Rendered pushy_iframe/show.html.erb within layouts/pushy_iframe (6.1ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:06:42 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.4ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:35:18 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.0ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/2.pushyl.uprimer.org/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:35:24 -0800 2011
+
+ActionController::RoutingError (No route matches "/foo/2.pushyl.uprimer.org/pushy_iframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:37:19 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.7ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/3.pushyl.uprimer.org/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:37:26 -0800 2011
+
+ActionController::RoutingError (No route matches "/foo/3.pushyl.uprimer.org/pushy_iframe"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:39:09 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.2ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:39:12 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.3ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:40:15 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.3ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:40:37 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (95.9ms)
+Completed 200 OK in 100ms (Views: 99.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:40:40 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.8ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:40:57 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.9ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:41:00 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:41:33 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.4ms)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:41:36 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.5ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:41:48 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.3ms)
+Completed 200 OK in 42ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:41:51 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:42:17 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (102.1ms)
+Completed 200 OK in 106ms (Views: 105.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:42:20 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:42:42 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.8ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:42:44 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 00:43:03 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.1ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 00:43:05 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 01:02:39 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.0ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 01:02:41 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 03:28:21 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (218.9ms)
+Completed 200 OK in 225ms (Views: 223.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 03:28:31 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.2ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 03:28:48 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.2ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 03:28:50 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 03:29:00 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.7ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 03:29:01 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.5ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 03:31:54 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.0ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 03:31:55 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:35:40 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (215.7ms)
+Completed 200 OK in 398ms (Views: 281.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:35:42 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (9.3ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:53:29 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.2ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:53:31 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:54:07 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.0ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:54:08 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (68.7ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:54:22 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.8ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:54:23 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:54:52 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.2ms)
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:54:54 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:55:05 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.6ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:55:12 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.7ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:55:39 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.8ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:55:41 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 74ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:57:21 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (40.0ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:57:22 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.5ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:57:28 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (42.0ms)
+Completed 200 OK in 46ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:57:31 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:57:39 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (98.3ms)
+Completed 200 OK in 102ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:57:41 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:58:03 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.0ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:58:04 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.3ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:58:44 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.8ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:58:46 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:59:01 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.5ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:59:03 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:59:14 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (101.0ms)
+Completed 200 OK in 105ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:59:16 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:59:20 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.2ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:59:21 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.3ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 21:59:34 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.7ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 21:59:36 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:00:00 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (39.9ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:00:02 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:00:38 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (208.0ms)
+Completed 200 OK in 212ms (Views: 211.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:00:41 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:00:43 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (97.7ms)
+Completed 200 OK in 102ms (Views: 101.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:00:45 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:01:02 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (41.5ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:01:04 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:01:30 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (37.3ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:01:32 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.5ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:06:27 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (38.6ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:06:29 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:07:49 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (100.2ms)
+Completed 200 OK in 104ms (Views: 103.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:07:51 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:28:19 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.2ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:28:21 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.9ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:29:10 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.4ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:29:12 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:29:26 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.5ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:29:28 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:29:58 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (102.3ms)
+Completed 200 OK in 106ms (Views: 105.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:30:00 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:30:09 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.2ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:30:11 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:30:16 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.0ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:30:18 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:30:27 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (36.5ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:30:29 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:30:33 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (101.6ms)
+Completed 200 OK in 106ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:30:36 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:39:28 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (34.8ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:39:30 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (6.0ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:40:07 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (35.2ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:40:08 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 22:56:22 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (64.9ms)
+Completed 200 OK in 75ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 22:56:25 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (25.8ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 23:02:04 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (159.0ms)
+Completed 200 OK in 165ms (Views: 164.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 23:02:10 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (19.6ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 23:08:23 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (49.9ms)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 23:08:25 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (11.5ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 23:08:35 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (126.0ms)
+Completed 200 OK in 136ms (Views: 134.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 23:08:37 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (9.7ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foo/test" for 127.0.0.1 at Sun Jan 16 23:22:08 -0800 2011
+  Processing by FooController#test as HTML
+Rendered foo/test.html.erb within layouts/foo (53.2ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pushy_iframe?domain=pushyl.uprimer.org" for 127.0.0.1 at Sun Jan 16 23:22:10 -0800 2011
+  Processing by PushyIframeController#index as HTML
+  Parameters: {"domain"=>"pushyl.uprimer.org"}
+Rendered pushy_iframe/index.html.erb within layouts/pushy_iframe (5.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Universal Primer with Pushy! - <%= title %></title>
+  <%= stylesheet_link_tag 'layout' %>
+  <%= javascript_include_tag :defaults %>
+
+  <%= javascript_include_tag 'cookiejar.js' %>
+
+  <%= javascript_include_tag 'pushy/version.js' %>
+  <%= javascript_include_tag 'pushy/uuid.js' %>
+  <%= javascript_include_tag 'pushy/transport.js' %>
+
+  <%= javascript_include_tag 'pushy/transport/xhr_stream.js' %>
+  <%= javascript_include_tag 'pushy/transport/sse_new.js' %>
+  <%= javascript_include_tag 'pushy/transport/sse.js' %>
+  <%= javascript_include_tag 'pushy/transport/long_poll.js' %>
+  <%= javascript_include_tag 'pushy/transport/html_file.js' %>
+
+  <%= javascript_include_tag 'pushy/pushy.js' %>
+
+  <script type="text/javascript" charset="utf-8">
+
+    var hostname = "<%= @hostname %>";
+
+    var transport = null;
+    var cookies = null;
+
+    function page_init() {
+
+      // this creates the transport inside an iframe
+      Pushy.createTransport(hostname, '/pushy_iframe', 'pushy_iframe_container', transportCreated);
+
+    }
+    
+    function transportCreated(transp) {
+
+      transport = transp;
+
+      transport.on_connect = function() {
+        alert('connected!');
+      };
+
+      transport.on_connect_retry = function(try_count) {
+        alert('retrying connection, time number: ' + try_count);
+      };
+
+      transport.on_reconnect = function() {
+        alert('reconnected');
+      };
+
+      transport.on_disconnect = function(final_try_count) {
+        alert('Disconnected after ' + final_try_count + ' reconnect attempts');
+      };
+
+      transport.on_receive = function(data) {
+        $("log").insert({ bottom: "<p>" + data.content + "</p>" });
+      };
+
+      transport.on_unload = function() {
+        alert('unloaded');
+      };
+
+      transport.on_error = function(str) {
+        $("log").insert({ bottom: "<p style='color:red'>" + str + "</p>" });
+      };
+
+      transport.on_ping = function() {
+        $("log").insert({ bottom: "<p style='color:orange'>ping</p>" });
+      };
+
+
+    }
+
+    function page_uninit() {
+      if(transport != null) {
+        transport.unload();
+      }
+    }
+
+    function connect() {
+      transport.connect(hostname, '/pushy', 1);
+    }
+
+    function disconnect() {
+      transport.disconnect();
+    }
+
+    function send(msg) {
+      transport.send(msg);
+    }
+
+  </script>
+
+
+  <%= csrf_meta_tag %>
+</head>
+<body onload='page_init()'>
+  <div id='user_nav'>
+    <% if current_user %>
+      <%= link_to 'Edit Profile', edit_user_path(:current) %> | 
+      <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_path %> | 
+      <%= link_to 'Login', login_path %>
+    <% end %>
+  </div>
+
+  <div id='content'>
+    <p class='flash_error'>
+      <%= flash[:error] %>
+    </p>
+    <p class='flash_notice'>
+      <%= flash[:notice] %>
+    </p>
+ 
+    <h1><%= title %></h1>
+
+    <div class='entry'>
+      <%= yield %>
+
+      <div id="log">
+      </div>
+
+      <div id='pushy_iframe_container'></div>
+
+      <!-- required for sse_new transport to work -->
+      <event-source></event-source>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+

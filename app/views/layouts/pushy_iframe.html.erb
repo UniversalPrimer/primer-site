@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Universal Primer with Pushy! - <%= title %></title>
+  <%= stylesheet_link_tag 'layout' %>
+  <%= javascript_include_tag :defaults %>
+
+  <%= javascript_include_tag 'cookiejar.js' %>
+
+  <%= javascript_include_tag 'pushy/version.js' %>
+  <%= javascript_include_tag 'pushy/uuid.js' %>
+  <%= javascript_include_tag 'pushy/transport.js' %>
+
+  <%= javascript_include_tag 'pushy/transport/xhr_stream.js' %>
+  <%= javascript_include_tag 'pushy/transport/sse_new.js' %>
+  <%= javascript_include_tag 'pushy/transport/sse.js' %>
+  <%= javascript_include_tag 'pushy/transport/long_poll.js' %>
+  <%= javascript_include_tag 'pushy/transport/html_file.js' %>
+
+  <%= javascript_include_tag 'pushy/pushy.js' %>
+
+  <script type="text/javascript" charset="utf-8">
+
+    var Pushy = null;
+
+    function page_init() {
+
+      document.domain = "<%= @domain %>";
+
+      Pushy = parent.Pushy;
+
+      transport = new Pushy.Transport();
+      Pushy.transportCreatedCallback(transport);
+    }
+
+  </script>
+
+
+  <%= csrf_meta_tag %>
+</head>
+<body onload='page_init()'>
+
+  <%= yield %>
+
+  <div id="log">
+  </div>
+
+  <!-- required for sse_new transport to work -->
+  <event-source></event-source>
+
+
+</body>
+</html>
+
+

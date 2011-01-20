@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   include Authentication
   protect_from_forgery
 
-  # TODO change this (it's deprecated, should put it in config.filter_parameters in config/application_controller.rb
-  filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
 
 

@@ -22,5 +22,9 @@ PrimerSites::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # the pushy middleware
+#  config.middleware.use 'Pushy::App', {}
+
 end
 

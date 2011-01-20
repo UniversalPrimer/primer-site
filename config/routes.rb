@@ -12,6 +12,8 @@ PrimerSites::Application.routes.draw do
 
   match ':controller(/:action(/:id(.:format)))'
 
+#  match '/pushy' => PushyApp
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

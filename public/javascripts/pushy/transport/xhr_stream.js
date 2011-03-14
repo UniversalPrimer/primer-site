@@ -22,7 +22,7 @@ Pushy.XhrStream = Class.create(Pushy.Transport, {
         msg: msg
       },
       onComplete: function(response) {
-                //alert('received data: ' + response.responseText);
+    
       }
     });
   },
@@ -49,6 +49,9 @@ Pushy.XhrStream = Class.create(Pushy.Transport, {
 
       onInteractive: function(transport) {
 
+        if(transport.status != 200) {
+          return false;
+        }
         var data = transport.responseText.slice(len);
         if(data == ' ') {
           self.ping();

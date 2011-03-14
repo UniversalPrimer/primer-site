@@ -12,7 +12,7 @@ if (Prototype.Browser.Gecko) {
   // TODO find out how far back XhrStreaming is supported
   // uprimer support is 3.0+
 
-  Pushy.Transport = Pushy.XhrStream;
+    Pushy.Transport = Pushy.XhrStream;
 
 } else if (Prototype.Browser.WebKit) {
   // TODO find out how far back XhrStreaming is supported
@@ -64,17 +64,27 @@ Pushy.nextHostname = function() {
 
   var cookie_name = 'pushy_connect_count';
   var connect_count = parseInt(this.cookiejar.get(cookie_name));
+  var new_connect_count = null;
   if(!connect_count) {
     this.cookiejar.put(cookie_name, 1);
-    return 1;
+    new_connect_count = 1;
+  } else {
+    this.cookiejar.remove(cookie_name);
+    new_connect_count = connect_count + 1;
   }
-  this.cookiejar.remove(cookie_name);
-  var new_connect_count = connect_count + 1;
+
+  // XXXX temporary code for debug reasons
+  if(new_connect_count > 20) {
+    new_connect_count = 1;
+  }
+
   // max length of a subdomain is 63 characters
   if(new_connect_count.toString().length > 63) {
     new_connect_count = 1; // wrap around
   }
   this.cookiejar.put(cookie_name, new_connect_count);
+
+
   return new_connect_count.toString() + '.' + this.domain;
 }
 

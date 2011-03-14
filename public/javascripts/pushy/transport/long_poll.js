@@ -17,6 +17,23 @@ Pushy.LongPoll = Class.create(Pushy.Transport, {
     this.long_poll = true;
   },
 
+
+  transport_send: function(msg) {
+    var len = 0;
+    var self = this;
+
+    this.ajax_request = new Ajax.Request(this.url, {
+      method: 'get',
+      parameters: {
+        sending: true,
+        msg: msg
+      },
+      onComplete: function(response) {
+                //alert('received data: ' + response.responseText);
+      }
+    });
+  },
+
   transport_connect: function() {
     var self = this;
     
@@ -36,8 +53,9 @@ Pushy.LongPoll = Class.create(Pushy.Transport, {
       },
       */
       onComplete: function(transport) {
-        if (transport.status == 0) {
+        if (transport.status != 200) {
           self.disconnected();
+          return false;
         } else {
           var data = transport.responseText.strip();
           if (data.length > 0) {

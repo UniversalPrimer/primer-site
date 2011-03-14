@@ -15,9 +15,9 @@ Pushy.Transport = Class.create({
   is_connected: false, 
 
   initialize: function(params) {
+
     if(params) {
       if(params.auto_reconnect === false) {
-        alert('disabled auto-reconnect');
         this.auto_reconnect = false;
       }
     }
@@ -76,7 +76,7 @@ Pushy.Transport = Class.create({
     try {
       msg = json_str.evalJSON(true);
     } catch(e) {
-      this.error('Invalid json received');
+      this.error('Invalid json received: ' + json_str);
       return false;
     }
     if(!msg.session_id) {
@@ -135,7 +135,12 @@ Pushy.Transport = Class.create({
     }
   },
 
-  new_connect_url: function() {
+  next_url: function() {
+    var hostname = Pushy.nextHostname();
+    return this.new_connect_url(hostname, true);
+  },
+
+  new_connect_url: function() { 
     this.session_id = Math.uuid(12);
     this.old_session_id = this.session_id;
 
@@ -143,8 +148,11 @@ Pushy.Transport = Class.create({
                                         channel_id: this.channel_id,
                                         session_id: this.session_id });
 
+    var hostname = this.base_hostname;
+
+
     // TODO options for https and other ports should be added
-    var url = 'http://' + this.base_hostname + this.root_url + (this.root_url.include('?') ? '&' : '?') + params;
+    var url = 'http://' + hostname + this.root_url + (this.root_url.include('?') ? '&' : '?') + params;
 
     //var url = this.root_url + (this.root_url.include('?') ? '&' : '?') + params;
 
@@ -216,7 +224,6 @@ Pushy.Transport = Class.create({
   ping_enabled: false, 
 
   // ping-based disconnects are disabled if ping_received is never called.
-  // right now only the sse transport uses ping-based disconnect
   ping_received: function(extra_wait_time) {
     this.ping_enabled = true;
     if(this.ping_timeout_id) {
@@ -228,6 +235,7 @@ Pushy.Transport = Class.create({
   },
 
   ping_timeout: function() {   
+            alert('ping timeout');
     this.ping_timeout_id = null;
     this.disconnect(true); // ensure proper connection teardown
     this.disconnected();

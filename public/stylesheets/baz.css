@@ -1,0 +1,53 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+#chat {
+    position: absolute;
+    top: 340px;
+    left: 14px;
+    font-size: 12px;
+    width: 240px;
+    border: 1px solid #999;
+}
+
+
+#video {
+    position: absolute;
+    display: block;
+    top: 70px;
+    left: 700px;
+    width: 320px;
+    height: 320px;
+}
+
+#chat_messages {
+    border-bottom: 1px solid #999;
+    padding: 5px;
+    height: 180px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+#chat_controls {
+    height: 25px;
+    margin: 6px;
+}
+
+#msg {
+    font-size: 10px;
+    height: 10px;
+    width: 210px;
+    border: 1px solid #999;
+}
+
+#connect_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

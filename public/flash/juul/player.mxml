@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns="*" 
+    layout="vertical"
+    creationComplete = "init()" >
+    
+    <mx:Script>
+        <![CDATA[
+            import mx.utils.ObjectUtil;
+
+            private var nc:NetConnection;
+            private var ns:NetStream;
+            private var video:Video;
+            private var meta:Object;
+
+
+            public function onBWDone():void{
+              ExternalInterface.call('console.log', "onBWDone called");
+            }
+
+            public function onFCSubscribe(info:Object):void{
+              ExternalInterface.call('console.log', "onFCSubscribe called");
+            }         
+
+            public function init():void 
+            {
+              startVideo();
+
+              NetConnection.prototype.onFCSubscribe = onFCSubscribe;
+              NetConnection.prototype.onBWDone = onBWDone;
+
+            }
+
+
+            public function onStatus(stat:Object):void {
+              switch (stat.info.code) {
+                case("NetConnection.Connect.Success"):
+
+                  ns = new NetStream(nc);
+                  ns.play("foo");
+
+                  var nsClient:Object = {};
+                  nsClient.onCuePoint = ns_onCuePoint;
+//              nsClient.onMetaData = ns_onMetaData;
+                  ns.client = nsClient;
+
+                  video = new Video();
+                  video.attachNetStream(ns);
+                  uic.addChild(video);                  
+                  break;
+                default:
+                  ExternalInterface.call('console.log', stat.info.code);
+                  
+              }
+            }
+
+            public function startVideo():void {
+            
+                ExternalInterface.call('console.log', 'hello');
+
+                nc = new NetConnection();
+/*
+                nc.connect(null); 
+                ns = new NetStream(nc);
+                ns.play("/cuepoints.flv");
+*/
+                nc.addEventListener(NetStatusEvent.NET_STATUS, onStatus);
+                nc.connect("rtmp://localhost/flvplayback"); 
+
+            }
+
+            private function ns_onCuePoint(infoObject:Object):void {
+              if(infoObject['msg']) {
+                ExternalInterface.call('on_flash_cuepoint', infoObject['msg']);
+              }
+
+              mainTxt.text += "\nCue: {\n";
+              var key:String;
+              for(key in infoObject) {
+                mainTxt.text += key + ": " + infoObject[key] + "\n";
+              }
+              mainTxt.text += "}";
+            }
+
+
+        ]]>
+    </mx:Script>
+
+    <mx:Style>
+        Application {
+          maring-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+          paddingTop: 0; paddingBottom: 0; paddingLeft: 0; paddingRight: 0
+        }
+        TextArea {
+          maring-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+          paddingTop: 0; paddingBottom: 0; paddingLeft: 0; paddingRight: 0
+        }
+        UIComponent {
+          maring-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+          paddingTop: 0; paddingBottom: 0; paddingLeft: 0; paddingRight: 0
+        }
+        Video {
+          maring-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+          paddingTop: 0; paddingBottom: 0; paddingLeft: 0; paddingRight: 0
+        }
+
+    </mx:Style>
+
+    <mx:UIComponent id="uic" width="320" height="240" />
+
+    <mx:TextArea id = "mainTxt" width="320" height="100" />
+
+</mx:Application>

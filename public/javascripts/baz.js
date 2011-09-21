@@ -19,11 +19,12 @@ function doSend() {
         msg: msg
     };
 
-    chan.send(Object.toJSON(cmd));
-    chat_add_msg(chat_nickname, msg);
+    send(Object.toJSON(cmd));
+
+    //   chat_add_msg(chat_nickname, msg);
 
     $('msg').value = '';
-
+    return false;
 }
 
 function reg_chat_nickname(name) {
@@ -33,18 +34,18 @@ function reg_chat_nickname(name) {
     chat_nickname = name;
 
     if(chan_ready) {
-        $('send_button').disabled = false;
-        $('msg').style.backgroundColor = 'white';
+        //        $('send_button').disabled = false;
+        //        $('msg').style.backgroundColor = 'white';
         $('msg').value = '';
     } else {
-        $('send_button').disabled = true;
+        //        $('send_button').disabled = true;
         $('msg').style.backgroundColor = 'gray';
     }
     $('send_button').value = 'Say';
 }
 
 function onChanReady() {
-    $('send_button').disabled = false;
+    //    $('send_button').disabled = false;
     chan_ready = true;
 }
 
@@ -54,13 +55,10 @@ function onReceive(json) {
         return false;
     }
     var cmd = json.evalJSON(true);
-
     if(!cmd || !cmd.type || (cmd.type == '')) {
         alert("invalid command received: " + json);
         return false;
     }
-
-    console.log("onreceive: " + json);
 
     switch(cmd.type) {
 
@@ -74,7 +72,7 @@ function onReceive(json) {
 
     case 'slides/change':
         if(!cmd.identifier || (cmd.identifier == '')) {
-            alert("slide change without md5: " + json);
+            alert("slide change without identifier: " + json);
             return false;
         }
         slide_change(cmd.identifier, cmd.index);
@@ -130,24 +128,23 @@ function change_slide_cmd(md5, page, size) {
     var cmd = {
         type: 'slides/change',
         md5: md5,
-        page: page
+        page: page,
+        size: size
     };
 
     chan.send(Object.toJSON(cmd));
-    slide_change(md5, page);
+    slide_change(md5, page, size);
 
 
 }
 
-function slide_change(md5, page) {
+function slide_change(identifier, index) {
     var img = document.createElement('IMG');
     var parms = {
-        md5: md5,
-        page: page
+        md5: identifier,
+        page: index
     }
     img.src = '/data_file/image?'+Object.toQueryString(parms);
-    console.log("CHANGING: " + img.src);
-
 
     $('slide_viewer').innerHTML = '';
     $('slide_viewer').appendChild(img);
@@ -189,21 +186,25 @@ function draw_paths(paths, color) {
 
     color = color || 'black';
 
+    var mwidth = 640;
+    var mheight = 480;
+
     var i;
     var from, to;
     for(i=0; i < (paths.length - 1); i++) {
         from = paths[i];
         to = paths[i+1];
+        console.log(from[0] + ' - ' + from[1]);
         draw_path(from[0], from[1], to[0], to[1], color);
     }
 }
 
 function denormalize_width(x) {
-    return Math.round(x * paper.width);
+    return Math.round((1-x) * paper.width);
 }
 
 function denormalize_height(x) {
-    return Math.round(x * paper.height);
+    return Math.round((1-x) * paper.height);
 }
 
 function draw_path(x1, y1, x2, y2, color) {
@@ -274,6 +275,6 @@ function draw_lines_cmd(lines, color) {
         color: color
     };
 
-    chan.send(Object.toJSON(cmd));
+    send(Object.toJSON(cmd));
     draw_lines(lines, color);
 }

@@ -104,5 +104,5 @@ DEPENDENCIES
   mongrel
   mysql2
   nifty-generators
-  rails (= 3.0.0)
+  rails
   thin

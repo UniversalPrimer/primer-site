@@ -10,6 +10,8 @@ PrimerSites::Application.routes.draw do
 
   match '/stream/:stream_name' => 'stream#show'
 
+  match '/upload' => 'stream#upload'
+
   match ':controller(/:action(/:id(.:format)))'
 
 #  match '/pushy' => PushyApp

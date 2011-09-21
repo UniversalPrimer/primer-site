@@ -49,6 +49,7 @@ Pushy.Transport = Class.create({
   on_ping: Prototype.emptyFunction, // UNRELIABLE (not triggered for long_poll transport, since that would require a disconnect/reconnect every 5 seconds) triggered even for transports that don't use ping-based disconnect detection (like SSE)
 
   error: function(str) {
+      console.log("error: " + str);
     this.on_error(str);
   },
 
@@ -72,6 +73,7 @@ Pushy.Transport = Class.create({
 
   validate_message: function(escaped_json_str) {
     var json_str = decodeURIComponent(escaped_json_str);
+      console.log("validating: " + escaped_json_str);
     var msg = null;
     try {
       msg = json_str.evalJSON(true);
@@ -110,6 +112,7 @@ Pushy.Transport = Class.create({
   },
 
   received: function(msg_str) {
+      console.log("received: " + msg_str)
     var msg = this.validate_message(msg_str);
     var got_welcome = this.is_welcome_message(msg);
     if(!this.is_connected && got_welcome) {
@@ -175,9 +178,12 @@ Pushy.Transport = Class.create({
     if(on_connect) {
         this.on_connect = on_connect;
     }
+
     if(on_receive) {
         this.on_receive = on_receive;
     }
+
+      console.log("connecting");
 
     this.connect_try_count += 1;
     if(Prototype.Browser.WebKit) {
@@ -185,6 +191,7 @@ Pushy.Transport = Class.create({
     } else {
       this.transport_connect();
     }
+
   },
   
   name: null,
@@ -201,6 +208,7 @@ Pushy.Transport = Class.create({
   },
 
   disconnected: function() {
+
     if(this.disconnected_no_reconnect) {
       return false;
     }
@@ -235,7 +243,6 @@ Pushy.Transport = Class.create({
   },
 
   ping_timeout: function() {   
-            alert('ping timeout');
     this.ping_timeout_id = null;
     this.disconnect(true); // ensure proper connection teardown
     this.disconnected();

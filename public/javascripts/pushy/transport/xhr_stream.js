@@ -35,7 +35,8 @@ Pushy.XhrStream = Class.create(Pushy.Transport, {
     this.ajax_request = new Ajax.Request(this.url, {
       method: 'get',
       onCreate: function(response) {
-                
+
+          console.log("on_create");
         // XXX
         // TODO does not happen in newest chrome
         // so the following bugfix is likely version-specific
@@ -49,9 +50,12 @@ Pushy.XhrStream = Class.create(Pushy.Transport, {
 
       onInteractive: function(transport) {
 
+          console.log('getting data');
+
         if(transport.status != 200) {
           return false;
         }
+
         var data = transport.responseText.slice(len);
         if(data == ' ') {
           self.ping();
@@ -64,6 +68,7 @@ Pushy.XhrStream = Class.create(Pushy.Transport, {
       },
 
       onComplete: function() {
+          console.log("on_complete");
         self.disconnected();
       }
     });

@@ -1,6 +1,7 @@
 class StreamController < ApplicationController
   include UploadUtils
   layout 'stream'
+  protect_from_forgery :except => :upload
   
   def show
 
@@ -58,15 +59,28 @@ class StreamController < ApplicationController
 
 
   
+  def upload
+
+
+
+    if request.post?
+      handle_upload(params)
+      render :text => "success!"
+      return    
+    end
+    render :layout => 'simple'
+  end
+
 #  private
 
     def handle_upload(params)
       
       @dfile = DataFile.new
-      @dfile.stream = @stream
-      @dfile.user = current_user
+#      @dfile.stream = @stream
+#      @dfile.user = current_user
       @dfile.save!
 
+#      raise @dfile.id.to_s
       # file-handling magic happens here
       @dfile.file = params[:file]
 

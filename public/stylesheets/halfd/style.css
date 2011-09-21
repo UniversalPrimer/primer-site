@@ -1,0 +1,214 @@
+.upSlideDisplay {
+    background  :   #333;
+    width       :   640px;
+    height      :   480px;
+}
+
+.upSlideDisplay .loader {
+    width       :   320px;
+    margin      :   200px auto;
+    font-size   :   3em;
+    color       :   #ccc;
+    text-align  :   center;
+    text-shadow :   0 2px 0 #121212;
+}
+
+video {
+	background	:	#333;
+	cursor		:	pointer;
+	cursor		:	hand;
+    margin      :   0;
+    padding     :   0;
+}
+
+.upVideoDisplay {
+	position	:	relative;
+    padding     :   0;
+    overflow    :   hidden;
+    background  :   #333;
+    background-image : url('../images/spin.gif');
+    background-repeat : no-repeat;
+    background-position : 50% 50%;
+}
+
+.playiconwrapper {
+    position    :   absolute;
+    top         :   0;
+    right       :   0;
+    bottom      :   0;
+    left        :   0;
+    background  :	transparent;
+    overflow    :   hidden;
+}
+
+.playiconwrapper .playicon {
+	position	:	absolute;
+	display		:	none;
+	cursor		:	pointer;
+	cursor		:	hand;
+    z-index     :   2000;
+	opacity		:	0.5;
+}
+
+.upVideoDisplay.paused .playicon {
+	display		:	block;
+}
+
+.up-scrubber {
+    position    :   absolute;
+	bottom		:   0px;
+	background	:	#dcdcdc;
+	height		:	4px;
+	width		:	100%;
+	-webkit-transition : height 200 linear;
+}
+
+body.night .up-scrubber {
+	background	:	#343434;
+	border-color:	#121221
+}
+
+.upVideoDisplay:hover .up-scrubber {
+	height		:	15px;
+}
+
+.upVideoDisplay:hover .up-handle {
+	opacity		:	1;
+}
+
+.upVideoDisplay:hover .up-controls{
+    opacity     :   0.9;
+}
+
+.up-played,
+.up-buffered
+{
+    position    :   absolute;
+    top         :   0;
+    left        :   0;
+}
+
+.up-played {
+	background	:	#29c;
+	height		:	100%;
+	overflow	:	hidden;
+	-webkit-border-radius : 7px;
+	-moz-border-radius : 7px;
+	-webkit-transition : width 250 linear;
+}
+
+.up-buffered {
+	position	:	absolute;
+	top	:	0;
+	left : 0;
+	bottom : 0;
+	background	:	#acacac;
+	width		:	0px;
+	-webkit-transition : width 35 linear;
+}
+
+.up-handle {
+	position	:	absolute;
+	top			:	0;
+	right		:	0;
+	width		:	11px;
+	height		:	11px;
+	background	:	#7cf;
+	border		:	2px #eee solid;
+	-webkit-border-radius : 7px;
+	-moz-border-radius : 7px;
+	opacity		:	0;	
+	-webkit-transition : opacity 150 linear;
+}
+
+.up-controls .up-slider {
+        float           :       right;
+        width           :       60px;
+		height			:		14px;
+        border          :       1px #dadada solid;
+		border-bottom	:		1px #f2f2f2 solid;
+		-webkit-appearance:none !important;
+		-webkit-border-radius	:	4px;
+		margin			:	4px 4px 0 0;
+		padding			:	3px 0 2px 0;
+		background		:	#cacaca;
+		box-shadow		:	inset 0 2px 5px #a6a6a6;
+}
+
+.up-controls .up-slider::-webkit-slider-thumb {
+   -webkit-appearance:none !important;
+        width           :       13px;
+        height          :       13px;
+        background      :       #eee;
+		border			:	1px #444 solid;
+		-webkit-border-radius	:	3px;
+		box-shadow		:	inset 0 1px 2px #fff;
+}
+
+body.night .up-controls .up-slider {
+	background		:	#242424;
+	border-color	:	#363636;
+		box-shadow		:	inset 0 2px 5px #111;
+}
+
+.up-controls .timedisplay {
+		float			:	left;
+		margin			:	9px 0 0 3px;
+		font-size		:	10px;
+		text-shadow		:	0 1px 1px #fff;
+}
+
+body.night .up-controls .timedisplay {
+		text-shadow		:	0 -1px 1px #000;
+		color			:	#cacaca;
+}
+
+.up-controls 
+{
+	position : absolute;
+	bottom : 25px;
+	left : 10px;
+	right : 10px;
+	padding		:	0;
+    height : 28px;
+	border :	1px #acacac solid;
+	background-image	:	url('../images/gradient.png');
+	background-position	:	0 0;
+	-webkit-border-radius	:	5px;
+	-moz-border-radius	:	5px;
+	border-radius	:	5px;
+    opacity         :   0;
+	-webkit-transition : opacity 200 linear;
+	-webkit-box-shadow : 0 3px 6px rgba(0,0,0,0.2);
+}
+
+body.night .up-controls {
+	background-position	:	0 28px;
+	border :	1px #333 solid;
+}
+
+.up-controls .up-toggle {
+	margin		:	3px 2px 0px 2px;
+	height		:	25px;
+	width		:	31px;
+	background-image	:	url('../images/icons.png');
+	cursor		:	pointer;
+	cursor		:	hand;
+	float		:	left;
+}
+
+.up-controls .up-toggle {
+	background-position	:	-31px 0;
+}
+
+.upVideoDisplay.paused .up-controls .up-toggle {
+	background-position	:	0 0;
+}
+
+.upVideoDisplay.paused .up-controls .up-toggle:active {
+	background-position	:	-62px 0;
+}
+
+.up-controls .up-toggle:active {
+	background-position	:	31px 0;
+}

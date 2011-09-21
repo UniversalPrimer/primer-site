@@ -14,15 +14,12 @@ class DataFile < ActiveRecord::Base
   }
 
   def storage_dir
-    if !id
+    if !self.id
       raise "can't get storage directory for data file when it doesn't have an id"
-    end
-    if !self.stream_id
-      raise "can't get storage directory for data file it doesn't have an associated stream"
     end
 
     pub_path = Pathname.new(Rails.public_path)
-    dir = pub_path.join('files', 'streams', self.stream.id.to_s, 'datafiles')
+    dir = pub_path.join('files')
     # a dir like: public/files/streams/16/datafiles/32/
     dir = dir.join(id.to_s)
   end
@@ -35,6 +32,11 @@ class DataFile < ActiveRecord::Base
 
 
   def file=(f)
+
+#    if f.instance_of?(Tempfile)
+#      raise "lol"
+#    end
+
 
     # create storage dir (if it doesn't exist)
     path = storage_dir

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    xmlns:local="*"
+    layout="vertical"
+    xmlns:net="flash.net.*" xmlns:display="flash.display.*"
+    width="640"
+    height="390"
+    paddingTop="0"
+    paddingRight="0"
+    paddingBottom="0"
+    paddingLeft="0"
+    creationComplete="init();"
+    >
+
+    <mx:VBox>
+        <mx:VideoDisplay id="player"
+                maintainAspectRatio="true"
+                width="640" 
+                height="390"
+                autoPlay="true"
+                x="0" y="0"
+                click="player.play()"
+        />
+    </mx:VBox>
+
+    <mx:Script>
+        <![CDATA[
+            // Script stilen
+            import flash.external.*;
+
+            public function init():void {
+                Security.allowDomain('*');
+                if (ExternalInterface.available) {
+                    // Set the external functions which will be callable from
+                    // javascript
+                    ExternalInterface.addCallback("setSource", setSource);
+                    ExternalInterface.addCallback("play", play);
+                    ExternalInterface.addCallback("pause", pause);
+                    ExternalInterface.addCallback("setLive", setLive);
+                }
+            }
+
+            private function setSource(str:String):void {
+                player.source = str;
+            } 
+
+            private function play():void {
+                player.play();
+            }
+
+            private function pause():void {
+                player.pause();
+            }
+
+            private function setLive(state:Boolean):void {
+                player.live = state;
+            }
+        ]]>
+    </mx:Script>
+
+</mx:Application>

@@ -6,5 +6,5 @@ development:
   database: primer
   pool: 5
   username: primer
-  password: primerpass
+  password: indiana_jones_cyber_hero
   socket: /var/run/mysqld/mysqld.sock

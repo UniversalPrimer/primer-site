@@ -85,7 +85,7 @@ function onReceive(json) {
             alert("lines command with no lines to draw: " + json);
             return false;
         }
-        draw_lines(cmd.lines, cmd.color);
+        draw_lines(cmd.lines, 'red');
         break;
 
     case 'draw/clear':
@@ -274,6 +274,6 @@ function draw_lines_cmd(lines, color) {
         color: color
     };
 
-    chan.send(Object.toJSON(cmd));
+//    chan.send(Object.toJSON(cmd));
     draw_lines(lines, color);
 }

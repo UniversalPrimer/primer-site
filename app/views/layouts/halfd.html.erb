@@ -24,7 +24,10 @@
 
     function page_init() {
 
-//      init_raphael();
+      init_raphael();
+
+      // TODO comment this out when it works
+      raph_test();
 
       vid1 = null;
 
@@ -76,6 +79,7 @@
       </object>      
     </div>
 
+    <div id='slide_viewer_overlay' class='upSlideDisplay' style='float:left'></div>
 		<div id="slide_viewer" class="upSlideDisplay" style="float:left; margin:0 40px">
 			<div class="loader">Slides<br /><img src="images/spin.gif" /></div>
 		</div>

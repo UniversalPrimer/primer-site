@@ -21948,3 +21948,156 @@ Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=4" for 1
   [1m[36mDataFile Load (0.2ms)[0m  [1mSELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1[0m
 Sent file /home/juul/primer/git/primer-site/public/files/14/sizes/medium_4.png (0.2ms)
 Completed 200 OK in 53ms
+
+
+Started GET "/live/stream" for 127.0.0.1 at Wed Sep 21 04:07:33 -0700 2011
+  Processing by LiveController#stream as HTML
+Rendered live/stream.html.erb within layouts/halfd (5.6ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:33 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:34 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/stylesheets/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:34 -0700 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/spin.gif"):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=4" for 127.0.0.1 at Wed Sep 21 04:07:35 -0700 2011
+  Processing by DataFileController#image as HTML
+  Parameters: {"page"=>"4", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mDataFile Load (1.3ms)[0m  SELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1
+Sent file /home/juul/primer/git/primer-site/public/files/14/sizes/medium_4.png (0.2ms)
+Completed 200 OK in 125ms
+
+
+Started GET "/live/stream" for 127.0.0.1 at Wed Sep 21 04:07:55 -0700 2011
+  Processing by LiveController#stream as HTML
+Rendered live/stream.html.erb within layouts/halfd (11.3ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:56 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.0ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:57 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/stylesheets/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:07:57 -0700 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/spin.gif"):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=4" for 127.0.0.1 at Wed Sep 21 04:07:58 -0700 2011
+  Processing by DataFileController#image as HTML
+  Parameters: {"page"=>"4", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[36mDataFile Load (0.1ms)[0m  [1mSELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1[0m
+Sent file /home/juul/primer/git/primer-site/public/files/14/sizes/medium_4.png (0.2ms)
+Completed 200 OK in 33ms
+
+
+Started GET "/live/stream" for 127.0.0.1 at Wed Sep 21 04:08:47 -0700 2011
+  Processing by LiveController#stream as HTML
+Rendered live/stream.html.erb within layouts/halfd (13.1ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:08:47 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:08:48 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/stylesheets/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:08:49 -0700 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/spin.gif"):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=4" for 127.0.0.1 at Wed Sep 21 04:08:51 -0700 2011
+  Processing by DataFileController#image as HTML
+  Parameters: {"page"=>"4", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[35mDataFile Load (0.1ms)[0m  SELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1
+Sent file /home/juul/primer/git/primer-site/public/files/14/sizes/medium_4.png (0.2ms)
+Completed 200 OK in 42ms
+
+
+Started GET "/live/stream" for 127.0.0.1 at Wed Sep 21 04:09:12 -0700 2011
+  Processing by LiveController#stream as HTML
+Rendered live/stream.html.erb within layouts/halfd (4.8ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:09:13 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/live/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:09:14 -0700 2011
+
+AbstractController::ActionNotFound (The action 'images' could not be found for LiveController):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/stylesheets/images/spin.gif" for 127.0.0.1 at Wed Sep 21 04:09:14 -0700 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/spin.gif"):
+  
+
+Rendered /var/lib/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/data_file/image?md5=c959f9f83fab203e09672e0ce45d4568&page=4" for 127.0.0.1 at Wed Sep 21 04:09:15 -0700 2011
+  Processing by DataFileController#image as HTML
+  Parameters: {"page"=>"4", "md5"=>"c959f9f83fab203e09672e0ce45d4568"}
+  [1m[36mDataFile Load (0.1ms)[0m  [1mSELECT `data_files`.* FROM `data_files` WHERE (`data_files`.`md5` = 'c959f9f83fab203e09672e0ce45d4568') LIMIT 1[0m
+Sent file /home/juul/primer/git/primer-site/public/files/14/sizes/medium_4.png (0.2ms)
+Completed 200 OK in 37ms
